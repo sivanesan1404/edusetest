@@ -27,7 +27,7 @@ public class NewTest1 {
   @Test
   public void verifytitle() {
 	    
-		driver.findElement(By.linkText("About Us")).click();
+	driver.findElement(By.linkText("About Us")).click();
         String a = driver.getTitle();
         System.out.println(a);
         Assert.assertEquals(a, "Home | Simple PHP Website");
