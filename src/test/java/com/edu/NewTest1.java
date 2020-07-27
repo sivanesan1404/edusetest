@@ -21,27 +21,16 @@ public class NewTest1 {
 	    System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 	    driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		driver.get("http://3.16.21.211:32768/sampleapp/");
+		driver.get("http://18.144.147.32:32768");
   }
   
   @Test
-  public void addContact() {
-	  
-	 	driver.findElement(By.xpath("//div[@class = 'v-button v-widget']")).click();
-		driver.findElement(By.id("gwt-uid-5")).sendKeys("Naresh");
-		driver.findElement(By.id("gwt-uid-7")).sendKeys("T");
-		driver.findElement(By.id("gwt-uid-9")).sendKeys("805983095");
-		driver.findElement(By.id("gwt-uid-11")).sendKeys("test@gmail.com");
-		driver.findElement(By.xpath("//div[@class = 'v-button v-widget primary v-button-primary']")).click();
-			
-	}
-  
-  @Test
   public void verifytitle() {
-	  
+	    
+		driver.findElement(By.linkText("About Us")).click();
         String a = driver.getTitle();
         System.out.println(a);
-        Assert.assertEquals(a, "sampleapp");
+        Assert.assertEquals(a, "Home | Simple PHP Website");
 	    System.out.println("Test Successful."); 
   }
   
